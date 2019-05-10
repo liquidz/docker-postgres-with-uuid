@@ -1,4 +1,4 @@
-FROM postgres:9.6.6
+FROM postgres:10.7
 
 ADD init.sh /docker-entrypoint-initdb.d/
 RUN chmod 755 /docker-entrypoint-initdb.d/init.sh && \
