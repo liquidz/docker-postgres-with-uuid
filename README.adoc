@@ -1,0 +1,15 @@
+= postgres with uuid
+
+https://hub.docker.com/r/uochan/postgres-with-uuid[uochan/postgres-with-uuid]
+
+[source,sql]
+----
+set search_path to public, extensions;
+
+create table sample (
+  uuid uuid default uuid_generate_v4() primary key,
+  name text unique not null
+);
+
+insert into sample(name) values ('foo');
+----
